@@ -16,7 +16,6 @@ const HotelCard = () => {
 
     hotels()
   }, [])
-
   return (
     <div>
       {hotels.map((hotel, index) => (
