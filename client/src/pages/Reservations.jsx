@@ -1,4 +1,4 @@
-import './App.css'
+import '../App.css'
 
 const Reservations = () => {
   return <div></div>
