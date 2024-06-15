@@ -1,29 +1,13 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-
-const HotelCard = () => {
-  const [hotels, sethotels] = useState([])
-
-  useEffect(() => {
-    const hotels = async () => {
-      try {
-        const response = await axios.get('http://localhost:3001/hotels')
-        sethotels(response.data)
-      } catch (error) {
-        console.log('Error Connecting', error)
-      }
-    }
-
-    hotels()
-  }, [])
+const HotelCard = (props) => {
   return (
-    <div>
-      {hotels.map((hotel, index) => (
-        <div className="small-card" key={index}>
-          {hotel.name}
-          <img src={hotel.img} />
-        </div>
-      ))}
+    <div className="hotel-card " id={props.id}>
+      <div className="img-wrapper">
+        <img src={props.img} />
+      </div>
+      <div className="info-wrapper">
+        <h3>{props.name}</h3>
+        <p>{props.location}</p>
+      </div>
     </div>
   )
 }
