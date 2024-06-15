@@ -9,8 +9,8 @@ const RoomCard = (props) => {
       <div className="info-wrapper">
         <h3>{props.name}</h3>
         <h4>Type : {props.type}</h4>
-        <h5>Price : {props.price}</h5>
-        <p>Rating : {props.rating} stars</p>
+        <h5>Price : {props.price} BD</h5>
+        <h5>Rating : {props.rating}/10 stars</h5>
       </div>
     </div>
   )
