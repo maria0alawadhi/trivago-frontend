@@ -13,6 +13,7 @@ const RoomDetails = () => {
           `http://localhost:3001/hotels/${id}/rooms/${room._id}`
         )
         setRoomDetails(response.data)
+        console.log(response.data)
       } catch (error) {
         console.log('Error Connecting', error)
       }

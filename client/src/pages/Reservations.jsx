@@ -1,7 +1,7 @@
 import '../App.css'
 
 const Reservations = () => {
-  return <div></div>
+  return <div>connected</div>
 }
 
 export default Reservations
