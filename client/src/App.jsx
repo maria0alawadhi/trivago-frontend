@@ -37,6 +37,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/hotels/:id/rooms" element={<HotelRooms />} />
+
           <Route path="/signin" element={<SignIn setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reservations" element={<Reservations user={user} />} />
