@@ -71,6 +71,7 @@ button:disabled {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  text-align: center;
 }
 
 .hotel-card {
@@ -79,6 +80,7 @@ button:disabled {
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 0 13px rgba(19, 19, 19, 0.1);
+  text-align: center;
 }
 .hotels {
   display: grid;
@@ -116,6 +118,7 @@ button:disabled {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  text-align: center;
 }
 .room-card {
   border: 1px solid #ccc;
