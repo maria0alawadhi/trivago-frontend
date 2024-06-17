@@ -132,3 +132,39 @@ button:disabled {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+.room-text {
+  text-align: center;
+}
+.room-detail {
+  width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.room-detail img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.room-detail h3 {
+  margin: 10px 0;
+  font-size: 25px;
+  color: #000000;
+}
+
+.room-detail h4 {
+  margin: 8px 0;
+  font-size: 20px;
+  color: #000000;
+}
+
+.room-detail h5 {
+  margin: 6px 0;
+  font-size: 20px;
+  color: 000000;
+}

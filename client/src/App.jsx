@@ -6,6 +6,7 @@ import SignIn from './pages/SignIn'
 import Home from './pages/Home'
 import HotelRooms from './pages/HotelRooms'
 import Reservations from './pages/Reservations'
+import RoomDetails from './pages/RoomDetails'
 import './App.css'
 
 import Header from './components/Header'
@@ -36,8 +37,11 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/hotels/:id/rooms" element={<HotelRooms />} />
-
+          <Route path="/hotels/:hotelid/rooms" element={<HotelRooms />} />
+          <Route
+            path="/hotels/:hotelid/rooms/:roomid"
+            element={<RoomDetails />}
+          />
           <Route path="/signin" element={<SignIn setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reservations" element={<Reservations user={user} />} />
