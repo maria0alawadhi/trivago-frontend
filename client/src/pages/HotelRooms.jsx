@@ -5,12 +5,13 @@ import { useParams, Link } from 'react-router-dom'
 import RoomCard from '../components/RoomCard'
 const HotelRooms = () => {
   const [rooms, setRooms] = useState([])
-  const { id } = useParams()
+
+  const { hotelid } = useParams()
   useEffect(() => {
     const rooms = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/hotels/${id}/rooms`
+          `http://localhost:3001/hotels/${hotelid}/rooms`
         )
         setRooms(response.data)
       } catch (error) {
@@ -19,7 +20,7 @@ const HotelRooms = () => {
     }
 
     rooms()
-  }, [id])
+  }, [hotelid])
 
   return (
     <div className="Room-card">
@@ -27,7 +28,7 @@ const HotelRooms = () => {
       <div className="rooms">
         {rooms.map((room, index) => (
           <Link
-            to={`/hotels/${id}/rooms/${room._id}`}
+            to={`/hotels/${hotelid}/rooms/${room._id}`}
             key={index}
             className="link"
           >
