@@ -9,7 +9,7 @@ const RoomDetails = () => {
   const { hotelid, roomid } = useParams()
 
   useEffect(() => {
-    const fetchRoom = async () => {
+    const getRoom = async () => {
       try {
         const response = await axios.get(
           `http://localhost:3001/hotels/${hotelid}/rooms/${roomid}`
@@ -20,7 +20,7 @@ const RoomDetails = () => {
       }
     }
 
-    fetchRoom()
+    getRoom()
   }, [hotelid, roomid])
 
   if (!room) {

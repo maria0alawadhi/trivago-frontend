@@ -8,8 +8,8 @@ const RoomDetail = (props) => {
       <h4>Type: {props.type}</h4>
       <h5>Price: {props.price} BD</h5>
       <h5>Rating: {props.rating}/10 stars</h5>
-      <p>Review: {props.review}</p>
-      <p>Facilities: {props.facilities.join(', ')}</p>
+      <h5>Review: {props.review}</h5>
+      <h5>Facilities: {props.facilities.join(', ')}</h5>
     </div>
   )
 }
