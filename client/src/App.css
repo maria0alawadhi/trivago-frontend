@@ -168,3 +168,38 @@ button:disabled {
   font-size: 20px;
   color: 000000;
 }
+
+.reservation-card {
+  border: #3333335e 2px solid;
+  border-radius: 25px;
+  background-color: #3333335e;
+  padding: 3%;
+  width: 75%;
+  margin: 2% auto;
+  display: flex;
+}
+
+.btn {
+  display: inline-block;
+  margin: 2%;
+}
+
+.btn-review {
+  background-color: #065168;
+}
+
+.btn-delete {
+  background-color: #681106;
+}
+
+.btn-edit {
+  background-color: #595f09;
+}
+
+.check-in {
+  color: #065520;
+}
+
+.check-out {
+  color: #8f0a0a;
+}
