@@ -27,17 +27,11 @@ const RoomDetails = () => {
     return null
   }
 
-  let avgRating = 0
-  room.rating.forEach((rate) => {
-    avgRating += rate
-  })
-  avgRating = avgRating / room.rating.length
-
   return (
     <div className="Room-detail">
       <h2 className="room-text">Room Details</h2>
       <div className="room">
-        <RoomDetail room={room} avgRating={avgRating} />
+        <RoomDetail room={room} />
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
 import '../App.css'
 
-const RoomCard = ({ room, avgRating }) => {
+const RoomCard = ({ room }) => {
   return (
     <div className="room-card " id={room.id}>
       <div className="img-wrapper">
@@ -10,7 +10,6 @@ const RoomCard = ({ room, avgRating }) => {
         <h3>{room.name}</h3>
         <h4>Type : {room.type}</h4>
         <h5>Price : {room.price} BD</h5>
-        <h5>Rating : {avgRating.toFixed(1)} stars</h5>
       </div>
     </div>
   )
