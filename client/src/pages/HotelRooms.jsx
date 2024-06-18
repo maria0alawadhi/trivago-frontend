@@ -26,25 +26,24 @@ const HotelRooms = () => {
     <div className="Room-card">
       <h2>Hotel Rooms</h2>
       <div className="rooms">
-        {rooms.map((room, index) => (
-          <Link
-            to={`/hotels/${hotelid}/rooms/${room._id}`}
-            key={index}
-            className="link"
-          >
-            <RoomCard
-              id={index}
-              name={room.name}
-              img={room.img}
-              type={room.type}
-              rating={room.rating}
-              review={room.review}
-              available={room.available}
-              facilities={room.facilities}
-              price={room.price}
-            />
-          </Link>
-        ))}
+        {rooms.map((room, index) => {
+          let avgRating = 0
+
+          room.rating.forEach((rate) => {
+            avgRating += rate
+          })
+          avgRating = avgRating / room.rating.length
+
+          return (
+            <Link
+              to={`/hotels/${hotelid}/rooms/${room._id}`}
+              key={index}
+              className="link"
+            >
+              <RoomCard room={room} avgRating={avgRating} />
+            </Link>
+          )
+        })}
       </div>
     </div>
   )

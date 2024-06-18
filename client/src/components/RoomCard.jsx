@@ -1,16 +1,16 @@
 import '../App.css'
 
-const RoomCard = (props) => {
+const RoomCard = ({ room, avgRating }) => {
   return (
-    <div className="room-card " id={props.id}>
+    <div className="room-card " id={room.id}>
       <div className="img-wrapper">
-        <img src={props.img} />
+        <img src={room.img} />
       </div>
       <div className="info-wrapper">
-        <h3>{props.name}</h3>
-        <h4>Type : {props.type}</h4>
-        <h5>Price : {props.price} BD</h5>
-        <h5>Rating : {props.rating}/10 stars</h5>
+        <h3>{room.name}</h3>
+        <h4>Type : {room.type}</h4>
+        <h5>Price : {room.price} BD</h5>
+        <h5>Rating : {avgRating.toFixed(1)} stars</h5>
       </div>
     </div>
   )
