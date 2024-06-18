@@ -170,18 +170,18 @@ button:disabled {
 }
 
 .reservation-card {
-  border: #3333335e 2px solid;
-  border-radius: 25px;
-  background-color: #3333335e;
-  padding: 3%;
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 13px rgba(19, 19, 19, 0.205);
   width: 75%;
   margin: 2% auto;
   display: flex;
 }
 
 .btn {
-  display: inline-block;
-  margin: 2%;
+  margin: 3%;
 }
 
 .btn-review {
@@ -202,4 +202,16 @@ button:disabled {
 
 .check-out {
   color: #8f0a0a;
+}
+
+.reservation-img {
+  width: 50%;
+}
+
+.row {
+  display: inline-flex;
+}
+
+.col {
+  width: 100%;
 }

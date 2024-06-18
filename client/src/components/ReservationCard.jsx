@@ -2,12 +2,10 @@ import '../App.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
 
 const ReservationCard = ({ reservations }) => {
   let navigate = useNavigate()
-
-  const [roomData, setRoomData] = useState([])
+  const [rooms, setRooms] = useState(null)
 
   const handleDelete = async (reservationId) => {
     if (window.confirm('Are you sure you want to delete this reservation?')) {
@@ -22,46 +20,57 @@ const ReservationCard = ({ reservations }) => {
     }
   }
 
-  // useEffect(() => {
-  //   const rooms = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `http://localhost:3001/rooms`
-  //       )
-  //       setRoomData(response.data)
-  //     } catch (error) {
-  //       console.log('Error Connecting', error)
-  //     }
-  //   }
+  useEffect(() => {
+    const fetchRooms = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3001/rooms`)
+        setRooms(response.data)
+      } catch (error) {
+        console.log('Error Connecting', error)
+      }
+    }
 
-  //   rooms()
-  // }, [])
+    fetchRooms()
+  }, [])
 
-  // const currentUserRoom = roomData.filter(
-  //   (room) => room.id === reservations.id
-  // );
-
-  //    console.log('currentUserRoom: ' + JSON.stringify(currentUserRoom,null,2))
-
-  //  console.log('reservations: ' + JSON.stringify(reservations,null,2))
   return (
     <div>
       {reservations.map((reservation, index) => (
         <div className="reservation-card" key={index}>
-          <div>
-            {/* <img src={} alt="img" />  */} {/* Placeholder for image  */}
-          </div>
-          <div>
-            <p>
-              <b>Room Name:</b>
-            </p>
-            <p className="check-in">
-              <b>Check-In Date:</b> {reservation.checkIn.slice(0, 10)}
-            </p>
-            <p className="check-out">
-              <b>Check-Out Date:</b> {reservation.checkOut.slice(0, 10)}
-            </p>
-          </div>
+          {rooms &&
+            (rooms.find((room) => room._id === reservation.room) ? (
+              <div className="row">
+                <div className="col">
+                  <img
+                    className="reservation-img"
+                    src={
+                      rooms.find((room) => room._id === reservation.room).img
+                    }
+                    alt="room-img"
+                  />
+                </div>
+                <div className="col">
+                  <p>
+                    <b>Room Name:</b>{' '}
+                    {rooms.find((room) => room._id === reservation.room).name}
+                  </p>
+
+                  <p>
+                    <b>Price:</b>{' '}
+                    {rooms.find((room) => room._id === reservation.room).price}{' '}
+                    BD
+                  </p>
+                  <p className="check-in">
+                    <b>Check-In Date:</b> {reservation.checkIn.slice(0, 10)}
+                  </p>
+                  <p className="check-out">
+                    <b>Check-Out Date:</b> {reservation.checkOut.slice(0, 10)}
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <p>Room details not found.</p>
+            ))}
           <div>
             <button className="btn btn-edit">Edit</button>
             <button
