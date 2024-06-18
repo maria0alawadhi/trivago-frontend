@@ -51,13 +51,13 @@ const ReservationCard = ({ reservations }) => {
                 </div>
                 <div className="col">
                   <p>
-                    <b>Room Name:</b>{' '}
+                    <b>Room Name:</b>
                     {rooms.find((room) => room._id === reservation.room).name}
                   </p>
 
                   <p>
-                    <b>Price:</b>{' '}
-                    {rooms.find((room) => room._id === reservation.room).price}{' '}
+                    <b>Price:</b>
+                    {rooms.find((room) => room._id === reservation.room).price}
                     BD
                   </p>
                   <p className="check-in">

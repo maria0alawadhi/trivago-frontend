@@ -1,15 +1,14 @@
 import '../App.css'
 
-const RoomDetail = (props) => {
+const RoomDetail = ({ room }) => {
   return (
-    <div className="room-detail" id={props.id}>
-      <img src={props.img} alt={props.name} />
-      <h3>Room name: {props.name}</h3>
-      <h4>Type: {props.type}</h4>
-      <h5>Price: {props.price} BD</h5>
-      <h5>Rating: {props.rating}/10 stars</h5>
-      <h5>Review: {props.review}</h5>
-      <h5>Facilities: {props.facilities.join(', ')}</h5>
+    <div className="room-detail" id={room.id}>
+      <img src={room.img} alt={room.name} />
+      <h3>Room name: {room.name}</h3>
+      <h4>Type: {room.type}</h4>
+      <h5>Price: {room.price} BD</h5>
+      <h5>Review: {room.review}</h5>
+      <h5>Facilities: {room.facilities.join(', ')}</h5>
     </div>
   )
 }

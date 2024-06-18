@@ -31,17 +31,7 @@ const RoomDetails = () => {
     <div className="Room-detail">
       <h2 className="room-text">Room Details</h2>
       <div className="room">
-        <RoomDetail
-          id={room._id}
-          name={room.name}
-          img={room.img}
-          type={room.type}
-          rating={room.rating}
-          review={room.review}
-          available={room.available}
-          facilities={room.facilities}
-          price={room.price}
-        />
+        <RoomDetail room={room} />
       </div>
     </div>
   )
