@@ -4,40 +4,43 @@ import ReservationCard from '../components/ReservationCard'
 import axios from 'axios'
 
 const Reservations = ({ user }) => {
-  const [userReservations, setUserReservations] = useState([])
+  const [Reservations, setReservations] = useState([])
+  const [ReservRooms, setReservRooms] = useState([])
+  const [Rooms, setRooms] = useState([])
 
   useEffect(() => {
-    const fetchUserReservations = async () => {
+    const fetchReservations = async () => {
       try {
-        if (user) {
-          const response = await axios.get(
-            `http://localhost:3001/reservations?user=${user._id}`
-          )
-          setUserReservations(response.data)
-        }
+        const response = await axios.get(`http://localhost:3001/reservations`)
+        setReservations(response.data)
       } catch (error) {
         console.error('Error Data Fetching:', error)
       }
     }
 
-    fetchUserReservations()
-  }, [user])
+    const fetchRooms = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3001/rooms`)
+        setRooms(response.data)
+      } catch (error) {
+        console.error('Error Data Fetching:', error)
+      }
+    }
+    fetchRooms()
+    fetchReservations()
+  }, [])
 
-  const currentUserReservation = userReservations.filter(
+  const currentUserReservations = Reservations.filter(
     (reservation) => reservation.user.toString() === user.id
   )
 
-  console.log('user' + JSON.stringify(user))
-
-  console.log('reservation' + JSON.stringify(userReservations))
-  console.log(currentUserReservation)
-
+  console.log('user' + JSON.stringify(user, null, 1))
+  console.log('reservation' + JSON.stringify(currentUserReservations, null, 2))
+  console.log('ReservRooms' + JSON.stringify(ReservRooms, null, 2))
   return (
     <div>
-      {user ? (
-        currentUserReservation.map((reservation) => (
-          <ReservationCard key={reservation._id} reservations={reservation} />
-        ))
+      {currentUserReservations.length ? (
+        <ReservationCard reservations={currentUserReservations} />
       ) : (
         <h3>No Reservations yet</h3>
       )}
