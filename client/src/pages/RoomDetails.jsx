@@ -4,9 +4,11 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import RoomDetail from '../components/RoomDetail'
 
-const RoomDetails = () => {
+const RoomDetails = ({ user }) => {
   const [room, setRoom] = useState(null)
   const { hotelid, roomid } = useParams()
+  const [checkIn, setCheckIn] = useState('')
+  const [checkOut, setCheckOut] = useState('')
 
   useEffect(() => {
     const getRoom = async () => {
@@ -28,17 +30,34 @@ const RoomDetails = () => {
   }
 
   const handleSubmit = async (e) => {
-    const reserv = await axios.post(
-      `http://localhost:3001/hotels/${hotelid}/rooms/${roomid}`
-    )
-    reserv()
-    console.log(reserv)
+    try {
+      const reserv = await axios.post(
+        `http://localhost:3001/hotels/${hotelid}/rooms/${roomid}`,
+        {
+          room: roomid,
+          checkIn,
+          checkOut,
+          user: user.id
+        }
+      )
+      console.log(reserv)
+    } catch (error) {
+      console.error('Error making reservation:', error)
+    }
   }
+
   return (
     <div className="Room-detail">
       <h2 className="room-text">Room Details</h2>
       <div className="room">
-        <RoomDetail room={room} handleSubmit={handleSubmit} />
+        <RoomDetail
+          room={room}
+          checkIn={checkIn}
+          setCheckIn={setCheckIn}
+          checkOut={checkOut}
+          setCheckOut={setCheckOut}
+          handleSubmit={handleSubmit}
+        />
       </div>
     </div>
   )
@@ -46,4 +65,4 @@ const RoomDetails = () => {
 
 export default RoomDetails
 
-// try tp push 
+// try tp push
