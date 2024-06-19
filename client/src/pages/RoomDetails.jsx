@@ -40,7 +40,7 @@ const RoomDetails = ({ user }) => {
           user: user.id
         }
       )
-      console.log(reserv)
+      console.log(reserv.config.data)
     } catch (error) {
       console.error('Error making reservation:', error)
     }
@@ -65,5 +65,3 @@ const RoomDetails = ({ user }) => {
 }
 
 export default RoomDetails
-
-// try tp push
