@@ -3,13 +3,13 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import RoomDetail from '../components/RoomDetail'
-
+import { useNavigate } from 'react-router-dom'
 const RoomDetails = ({ user }) => {
   const [room, setRoom] = useState(null)
   const { hotelid, roomid } = useParams()
   const [checkIn, setCheckIn] = useState('')
   const [checkOut, setCheckOut] = useState('')
-
+  const navigate = useNavigate()
   useEffect(() => {
     const getRoom = async () => {
       try {
@@ -41,10 +41,10 @@ const RoomDetails = ({ user }) => {
         }
       )
       console.log(reserv.config.data)
+      navigate('/reservations')
     } catch (error) {
       console.error('Error making reservation:', error)
     }
-    
   }
 
   return (
