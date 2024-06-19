@@ -27,14 +27,23 @@ const RoomDetails = () => {
     return null
   }
 
+  const handleSubmit = async (e) => {
+    const reserv = await axios.post(
+      `http://localhost:3001/hotels/${hotelid}/rooms/${roomid}`
+    )
+    reserv()
+    console.log(reserv)
+  }
   return (
     <div className="Room-detail">
       <h2 className="room-text">Room Details</h2>
       <div className="room">
-        <RoomDetail room={room} />
+        <RoomDetail room={room} handleSubmit={handleSubmit} />
       </div>
     </div>
   )
 }
 
 export default RoomDetails
+
+// try tp push 
