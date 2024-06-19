@@ -1,12 +1,14 @@
-const HotelCard = (props) => {
+
+const HotelCard = ({ hotel, avgRating }) => {
   return (
-    <div className="hotel-card " id={props.id}>
+    <div className="hotel-card " id={hotel.id}>
       <div className="img-wrapper">
-        <img src={props.img} />
+        <img src={hotel.img} />
       </div>
       <div className="info-wrapper">
-        <h3>{props.name}</h3>
-        <p>{props.location}</p>
+        <h3>{hotel.name}</h3>
+        <h5>Rating : {avgRating.toFixed(1)} stars</h5>
+        <p>{hotel.location}</p>
       </div>
     </div>
   )
