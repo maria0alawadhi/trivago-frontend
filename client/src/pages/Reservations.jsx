@@ -19,7 +19,7 @@ const Reservations = ({ user }) => {
   }, [])
 
   const currentUserReservations = Reservations.filter(
-    (reservation) => reservation.user.toString() === user.id
+    (reservation) => reservation.user === user.id
   )
 
   return (
