@@ -1,6 +1,6 @@
 import '../App.css'
 
-const RoomDetail = ({ room }) => {
+const RoomDetail = ({ room, handleSubmit }) => {
   return (
     <div className="room-detail" id={room.id}>
       <img src={room.img} alt={room.name} />
@@ -9,6 +9,11 @@ const RoomDetail = ({ room }) => {
       <h5>Price: {room.price} BD</h5>
       <h5>Review: {room.review}</h5>
       <h5>Facilities: {room.facilities.join(', ')}</h5>
+      <form onSubmit={handleSubmit}>
+        <input type="date"></input>
+        <input type="date"></input>
+        <button> confirm</button>
+      </form>
     </div>
   )
 }
