@@ -20,6 +20,10 @@ const ReservationCard = ({ reservations }) => {
     }
   }
 
+  const handleReviewClick = (roomId) => {
+    navigate(`/reviews/${roomId}`)
+  }
+
   useEffect(() => {
     const fetchRooms = async () => {
       try {
@@ -36,6 +40,7 @@ const ReservationCard = ({ reservations }) => {
   return (
     <div>
       {reservations.map((reservation, index) => (
+      
         <div className="reservation-card" key={index}>
           {rooms &&
             (rooms.find((room) => room._id === reservation.room) ? (
@@ -79,7 +84,12 @@ const ReservationCard = ({ reservations }) => {
             >
               Delete
             </button>
-            <button className="btn btn-review">Review</button>
+            <button
+              className="btn btn-review"
+              onClick={() => handleReviewClick(reservation.room)}
+            >
+              Review
+            </button>
           </div>
         </div>
       ))}
