@@ -9,11 +9,21 @@ const RoomDetail = ({ room, handleSubmit }) => {
       <h5>Price: {room.price} BD</h5>
       <h5>Review: {room.review}</h5>
       <h5>Facilities: {room.facilities.join(', ')}</h5>
-      <form onSubmit={handleSubmit}>
-        <input type="date"></input>
-        <input type="date"></input>
+
+
+      <form onSubmit={handleSubmit}
+      
+      >
+        <input type="date"
+       
+        ></input>
+        <input type="date"
+        
+        ></input>
         <button> confirm</button>
       </form>
+
+
     </div>
   )
 }
