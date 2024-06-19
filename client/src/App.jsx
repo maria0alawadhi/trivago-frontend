@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import HotelRooms from './pages/HotelRooms'
 import Reservations from './pages/Reservations'
 import RoomDetails from './pages/RoomDetails'
+import ReviewForm from './pages/ReviewForm'
 import './App.css'
 
 import Header from './components/Header'
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reservations" element={<Reservations user={user} />} />
+          <Route path="/reviews/:roomid" element={<ReviewForm user={user}/>} />
         </Routes>
       </main>
     </div>

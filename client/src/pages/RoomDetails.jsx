@@ -44,6 +44,7 @@ const RoomDetails = ({ user }) => {
     } catch (error) {
       console.error('Error making reservation:', error)
     }
+    
   }
 
   return (
