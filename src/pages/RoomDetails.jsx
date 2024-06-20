@@ -48,7 +48,6 @@ const RoomDetails = ({ user }) => {
 
   return (
     <div className="Room-detail">
-      <h2 className="room-text">Room Details</h2>
       <div className="room">
         <RoomDetail
           room={room}

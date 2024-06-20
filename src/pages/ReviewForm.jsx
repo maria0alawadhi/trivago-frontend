@@ -25,7 +25,6 @@ const ReviewForm = ({ user }) => {
       console.log(response.data)
       setReview({ review: '', rating: 0, user: user?.id, room: roomid })
 
-      alert('Thank you for your feedback ')
       navigate(`/`)
     } catch (err) {
       console.error(err)
@@ -33,23 +32,15 @@ const ReviewForm = ({ user }) => {
   }
 
   return (
-    <div className="container">
+    <div className="container4">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="room">RoomId "for reference only":</label>
-        <input type="text" name="room" value={review.room} disabled />
-        <label htmlFor="user">UserId "for reference only":</label>
-        <input type="text" name="user" value={review.user} disabled />
-        <label htmlFor="review">Review:</label>
+        <input type="hidden" name="room" value={review.room} disabled />
+        <input type="hidden" name="user" value={review.user} disabled />
+        <label htmlFor="review">
+          <h1>Review</h1>
+        </label>
         <textarea name="review" value={review.review} onChange={handleChange} />
-        <label htmlFor="rating">Rating:</label>
-        <input
-          type="number"
-          name="rating"
-          min="0"
-          max="5"
-          value={review.rating}
-          onChange={handleChange}
-        />
+
         <button type="submit">Submit Review</button>
       </form>
     </div>
