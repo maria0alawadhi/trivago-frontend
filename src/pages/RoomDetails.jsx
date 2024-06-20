@@ -12,6 +12,22 @@ const RoomDetails = ({ user }) => {
   const [checkIn, setCheckIn] = useState('')
   const [checkOut, setCheckOut] = useState('')
   const navigate = useNavigate()
+ 
+  const handleSubmit = async (e) => {
+    try {
+      const reserv = await Client.post(`/hotels/${hotelid}/rooms/${roomid}`, {
+        room: roomid,
+        checkIn,
+        checkOut,
+        user: user.id
+      })
+      console.log(reserv.config.data)
+      navigate('/reservations')
+    } catch (error) {
+      console.error('Error making reservation:', error)
+    }
+  }
+
   useEffect(() => {
     const getRoom = async () => {
       try {
@@ -31,20 +47,6 @@ const RoomDetails = ({ user }) => {
     return null
   }
 
-  const handleSubmit = async (e) => {
-    try {
-      const reserv = await Client.post(`/hotels/${hotelid}/rooms/${roomid}`, {
-        room: roomid,
-        checkIn,
-        checkOut,
-        user: user.id
-      })
-      console.log(reserv.config.data)
-      navigate('/reservations')
-    } catch (error) {
-      console.error('Error making reservation:', error)
-    }
-  }
 
   return (
     <div className="Room-detail">
