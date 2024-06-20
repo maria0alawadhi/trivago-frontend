@@ -74,11 +74,9 @@ button {
 }
 
 button:disabled {
-
   background-color: #747272;
   height: 50px;
   width: 100%;
-
 }
 .Home-card {
   max-width: 1200px;
@@ -111,7 +109,6 @@ button:disabled {
   border-radius: 3px;
 }
 
-
 .img-room {
   width: 50%;
   height: 250px;
@@ -122,7 +119,6 @@ button:disabled {
   height: 50%;
   border-radius: 3px;
 }
-
 
 .info-wrapper {
   padding: 16px;
@@ -242,7 +238,6 @@ button:disabled {
 .col {
   width: 100%;
   text-align: center;
-
 }
 .unavailable {
   width: 300px;
@@ -279,7 +274,6 @@ button:disabled {
   margin-top: 10px;
 }
 .checkout {
-  margin-left: 50px;
   margin-top: 20px;
   margin-bottom: 20px;
   font-weight: bold;
@@ -409,4 +403,3 @@ button:disabled {
   margin: 0 auto;
   margin-top: 7%;
 }
-
