@@ -5,6 +5,7 @@ import { BASE_URL } from '../services/api'
 import { useParams } from 'react-router-dom'
 import RoomDetail from '../components/RoomDetail'
 import { useNavigate } from 'react-router-dom'
+import Client from '../services/api'
 const RoomDetails = ({ user }) => {
   const [room, setRoom] = useState(null)
   const { hotelid, roomid } = useParams()
@@ -32,15 +33,12 @@ const RoomDetails = ({ user }) => {
 
   const handleSubmit = async (e) => {
     try {
-      const reserv = await axios.post(
-        `${BASE_URL}/hotels/${hotelid}/rooms/${roomid}`,
-        {
-          room: roomid,
-          checkIn,
-          checkOut,
-          user: user.id
-        }
-      )
+      const reserv = await Client.post(`/hotels/${hotelid}/rooms/${roomid}`, {
+        room: roomid,
+        checkIn,
+        checkOut,
+        user: user.id
+      })
       console.log(reserv.config.data)
       navigate('/reservations')
     } catch (error) {
