@@ -1,21 +1,16 @@
 import React, { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import axios from 'axios'
-import { BASE_URL } from '../services/api'
-
-const DateForm = () => {
+import Client from '../services/api'
+const EditReservForm = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
   const queryParams = new URLSearchParams(location.search)
   const oldCheckIn = queryParams.get('checkIn')
   const oldCheckOut = queryParams.get('checkOut')
-
   const reservationId = queryParams.get('reservationId')
-
   const [newCheckIn, setNewCheckIn] = useState('')
   const [newCheckOut, setNewCheckOut] = useState('')
-
   const [confirmEdit, setConfirmEdit] = useState(false)
 
   const handleConfirm = () => {
@@ -31,18 +26,15 @@ const DateForm = () => {
         newCheckOut
       })
 
-      console.log(`reservation id ${reservationId}`)
-
-      const response = await axios.put(
-        `${BASE_URL}/reservations/${reservationId}`,
+      const response = await Client.put(
+        `/reservations/${reservationId}`,
         { oldCheckIn, oldCheckOut, newCheckIn, newCheckOut }
       )
 
       alert('Reservation updated successfully!')
-
       navigate('/')
     } catch (error) {
-      //  فشل التحديث
+
       console.error(
         'Error updating reservation:',
         error.response ? error.response.data : error.message
@@ -61,12 +53,12 @@ const DateForm = () => {
   return (
     <div>
       <h2>Edit Reservation</h2>
-      {/* عرض التواريخ القديمة للحجز */}
+   
       <p>Old Check-In Date: {new Date(oldCheckIn).toLocaleString()}</p>
       <p>Old Check-Out Date: {new Date(oldCheckOut).toLocaleString()}</p>
       {confirmEdit ? (
         <>
-          {/* إدخال التواريخ الجديدة */}
+      
           <div>
             <label>New Check-In Date and Time:</label>
             <input
@@ -83,12 +75,12 @@ const DateForm = () => {
               onChange={(e) => setNewCheckOut(e.target.value)}
             />
           </div>
-          {/* زر لتحديث الحجز */}
+       
           <button onClick={handleUpdate}>Update Reservation</button>
         </>
       ) : (
         <>
-          {/* تأكيد التعديل */}
+         
           <p>Are you sure you want to change the reservation dates?</p>
           <button onClick={handleConfirm}>Yes</button>
           <button onClick={() => navigate(-1)}>No</button>
@@ -98,4 +90,4 @@ const DateForm = () => {
   )
 }
 
-export default DateForm
+export default EditReservForm

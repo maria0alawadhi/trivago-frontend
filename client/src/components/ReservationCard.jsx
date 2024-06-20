@@ -9,7 +9,7 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
   const handleEdit = (reservation) => {
     const { checkIn, checkOut } = reservation
     navigate(
-      `/editfunction?checkIn=${encodeURIComponent(
+      `/Edit?checkIn=${encodeURIComponent(
         checkIn
       )}&checkOut=${encodeURIComponent(
         checkOut
