@@ -27,7 +27,7 @@ const Reservations = ({ user }) => {
       {currentUserReservations.length ? (
         <ReservationCard reservations={currentUserReservations} />
       ) : (
-        <h3>No Reservations yet</h3>
+        <h3 className="unavailable">No Reservations yet</h3>
       )}
     </div>
   )
