@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const Reservations = ({ user }) => {
   const [Reservations, setReservations] = useState([])
-
+  const [updateRes, setUpdateRes] = useState(false)
   useEffect(() => {
     const fetchReservations = async () => {
       try {
@@ -16,7 +16,7 @@ const Reservations = ({ user }) => {
       }
     }
     fetchReservations()
-  }, [])
+  }, [updateRes])
 
   const currentUserReservations = Reservations.filter(
     (reservation) => reservation.user === user.id
@@ -25,7 +25,10 @@ const Reservations = ({ user }) => {
   return (
     <div>
       {currentUserReservations.length ? (
-        <ReservationCard reservations={currentUserReservations} />
+        <ReservationCard
+          reservations={currentUserReservations}
+          setUpdateRes={setUpdateRes}
+        />
       ) : (
         <h3>No Reservations yet</h3>
       )}

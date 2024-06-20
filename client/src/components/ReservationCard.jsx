@@ -1,19 +1,16 @@
 import '../App.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 
-const ReservationCard = ({ reservations }) => {
-  let navigate = useNavigate()
+const ReservationCard = ({ reservations, setUpdateRes }) => {
   const [rooms, setRooms] = useState(null)
-
   const handleDelete = async (reservationId) => {
     if (window.confirm('Are you sure you want to delete this reservation?')) {
       try {
         await axios.delete(
           `http://localhost:3001/reservations/${reservationId}`
         )
-        navigate('/')
+        setUpdateRes((prevData) => !prevData)
       } catch (error) {
         console.error('Error deleting a reservation', error)
       }
@@ -40,7 +37,6 @@ const ReservationCard = ({ reservations }) => {
   return (
     <div>
       {reservations.map((reservation, index) => (
-      
         <div className="reservation-card" key={index}>
           {rooms &&
             (rooms.find((room) => room._id === reservation.room) ? (
@@ -59,7 +55,6 @@ const ReservationCard = ({ reservations }) => {
                     <b>Room Name:</b>
                     {rooms.find((room) => room._id === reservation.room).name}
                   </p>
-
                   <p>
                     <b>Price:</b>
                     {rooms.find((room) => room._id === reservation.room).price}
