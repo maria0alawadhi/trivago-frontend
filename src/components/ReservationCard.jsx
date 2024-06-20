@@ -46,13 +46,14 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
   }, [])
 
   return (
-    <div>
+    <div className="cenr">
+      <h1>My Reservations</h1>
       {reservations.map((reservation, index) => (
         <div className="reservation-card" key={index}>
           {rooms &&
             (rooms.find((room) => room._id === reservation.room) ? (
-              <div className="row">
-                <div className="col">
+              <div className="reservation-content">
+                <div className="reservation-img-container">
                   <img
                     className="reservation-img"
                     src={
@@ -61,12 +62,11 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
                     alt="room-img"
                   />
                 </div>
-                <div className="col">
+                <div className="reservation-details">
                   <p>
                     <b>Room Name:</b>{' '}
                     {rooms.find((room) => room._id === reservation.room).name}
                   </p>
-
                   <p>
                     <b>Price:</b>{' '}
                     {rooms.find((room) => room._id === reservation.room).price}{' '}
@@ -79,30 +79,30 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
                     <b>Check-Out Date:</b> {reservation.checkOut.slice(0, 10)}
                   </p>
                 </div>
+                <div className="reservation-buttons">
+                  <button
+                    className="btn-edit"
+                    onClick={() => handleEdit(reservation)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="btn-delete"
+                    onClick={() => handleDelete(reservation._id)}
+                  >
+                    Delete
+                  </button>
+                  <button
+                    className="btn-review"
+                    onClick={() => handleReviewClick(reservation.room)}
+                  >
+                    Review
+                  </button>
+                </div>
               </div>
             ) : (
               <p>Room details not found.</p>
             ))}
-          <div>
-            <button
-              className="btn btn-edit"
-              onClick={() => handleEdit(reservation)}
-            >
-              Edit
-            </button>
-            <button
-              className="btn btn-delete"
-              onClick={() => handleDelete(reservation._id)}
-            >
-              Delete
-            </button>
-            <button
-              className="btn btn-review"
-              onClick={() => handleReviewClick(reservation.room)}
-            >
-              Review
-            </button>
-          </div>
         </div>
       ))}
     </div>

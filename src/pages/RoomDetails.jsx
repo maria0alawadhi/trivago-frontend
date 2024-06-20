@@ -12,7 +12,7 @@ const RoomDetails = ({ user }) => {
   const [checkIn, setCheckIn] = useState('')
   const [checkOut, setCheckOut] = useState('')
   const navigate = useNavigate()
- 
+
   const handleSubmit = async (e) => {
     try {
       const reserv = await Client.post(`/hotels/${hotelid}/rooms/${roomid}`, {
@@ -27,6 +27,7 @@ const RoomDetails = ({ user }) => {
       console.error('Error making reservation:', error)
     }
   }
+
 
   useEffect(() => {
     const getRoom = async () => {
@@ -47,10 +48,8 @@ const RoomDetails = ({ user }) => {
     return null
   }
 
-
   return (
-    <div className="Room-detail">
-      <h2 className="room-text">Room Details</h2>
+      <div className="Room-detail">
       <div className="room">
         <RoomDetail
           room={room}

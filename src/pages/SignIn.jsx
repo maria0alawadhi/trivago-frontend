@@ -6,7 +6,7 @@ import { SignInUser } from '../services/Auth'
 
 const SignIn = ({ setUser }) => {
   let navigate = useNavigate()
-  
+
   const [formValues, setFormValues] = useState({ email: '', password: '' })
 
   const handleChange = (e) => {
@@ -22,6 +22,9 @@ const SignIn = ({ setUser }) => {
   }
 
   return (
+
+    <div className="container3">
+      <h1 className="register">Sign In</h1>
     <div className="container wrapper">
       <div className="signin-card">
         <form onSubmit={handleSubmit}>
@@ -51,6 +54,7 @@ const SignIn = ({ setUser }) => {
           </button>
         </form>
       </div>
+    </div>
       </div>
 
   )

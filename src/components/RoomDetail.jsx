@@ -3,6 +3,7 @@ import '../App.css'
 import axios from 'axios'
 import { useParams } from 'react-router'
 import { BASE_URL } from '../services/api'
+
 const RoomDetail = ({
   room,
   handleSubmit,
@@ -14,14 +15,14 @@ const RoomDetail = ({
 }) => {
   const [Room, setRoom] = useState([])
   const { roomid } = useParams()
-
+  
   const handleFormSubmit = (event) => {
     event.preventDefault()
     console.log('Form submitted with dates:', checkIn, checkOut)
     handleSubmit({ checkIn, checkOut })
   }
-
-  useEffect(() => {
+  
+    useEffect(() => {
     const reviewRoom = async () => {
       try {
         const response = await axios.get(`${BASE_URL}/reviews/${roomid}`)
@@ -33,17 +34,16 @@ const RoomDetail = ({
     reviewRoom()
   }, [roomid])
 
-
-
-
-
   return (
     <div className="room-detail" id={room.id}>
-      <img src={room.img} alt={room.name} />
-      <h3>Room name: {room.name}</h3>
-      <h4>Type: {room.type}</h4>
-      <h5>Price: {room.price} BD</h5>
-      <h5>Reviews: </h5>
+      <h2 className="room-text">Room Details</h2>
+      <div className="room-data">
+        <img src={room.img} alt={room.name} />
+        <h4>Room name: {room.name}</h4>
+        <h4>Type: {room.type}</h4>
+        <h4>Price: {room.price} BD</h4>
+        <h4>Facilities: {room.facilities.join(', ')}</h4>
+        <h5>Reviews: </h5>
       <ul>
         {Room.map((room, index) => (
           <div key={index}>
@@ -52,14 +52,17 @@ const RoomDetail = ({
             </div>
         ))}
       </ul>
-      <h5>Facilities: {room.facilities.join(', ')}</h5>
+      </div>
       {user && (
-        <div className="container">
-          <div>reservation info:</div>
-          <form onSubmit={handleFormSubmit}>
-            <label htmlFor="checkIn">
-              Check In Date:
+        <div className="container2">
+          <div>
+            <h4>Reserve Your Room</h4>
+          </div>
+          <form onSubmit={handleFormSubmit} className="reservation">
+            <label htmlFor="checkIn" className="checkout">
+              Check In:
               <input
+                className="checkout"
                 type="date"
                 value={checkIn}
                 name="checkIn"
@@ -70,9 +73,10 @@ const RoomDetail = ({
                 required
               />
             </label>
-            <label htmlFor="checkOut">
-              Check In Date:
+            <label htmlFor="checkOut" className="checkout">
+              Check Out:
               <input
+                className="checkout"
                 type="date"
                 value={checkOut}
                 onChange={(e) => {
@@ -82,7 +86,10 @@ const RoomDetail = ({
                 required
               />
             </label>
-            <button type="submit">Confirm</button>
+
+            <button type="submit" className="submit">
+              Confirm
+            </button>
           </form>
         </div>
       )}

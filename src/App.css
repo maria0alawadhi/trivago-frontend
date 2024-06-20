@@ -48,7 +48,7 @@ nav a {
 
 .input-wrapper {
   margin-bottom: 1rem;
-  color: #6c757d;
+  color: #080808;
   display: block;
   font-weight: bold;
 }
@@ -65,7 +65,7 @@ button {
   display: block;
   width: 100%;
   padding: 0.5rem;
-  background-color: #007bff;
+  background-color: #4ba115;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -74,7 +74,11 @@ button {
 }
 
 button:disabled {
-  background-color: #6c757d;
+
+  background-color: #747272;
+  height: 50px;
+  width: 100%;
+
 }
 .Home-card {
   max-width: 1200px;
@@ -106,6 +110,19 @@ button:disabled {
   height: 100%;
   border-radius: 3px;
 }
+
+
+.img-room {
+  width: 50%;
+  height: 250px;
+}
+
+.img-room img {
+  width: 50%;
+  height: 50%;
+  border-radius: 3px;
+}
+
 
 .info-wrapper {
   padding: 16px;
@@ -214,7 +231,8 @@ button:disabled {
 }
 
 .reservation-img {
-  width: 50%;
+  width: 90%;
+  height: 90%;
 }
 
 .row {
@@ -223,6 +241,8 @@ button:disabled {
 
 .col {
   width: 100%;
+  text-align: center;
+
 }
 .unavailable {
   width: 300px;
@@ -237,3 +257,156 @@ button:disabled {
   background-color: #fff;
   box-shadow: 0 0 13px rgba(19, 19, 19, 0.1);
 }
+
+.room-data {
+  max-width: 50%;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.671);
+  margin: 0 auto;
+}
+.container2 {
+  max-width: 51%;
+  margin: 0 auto;
+  margin-top: 2%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.671);
+}
+.submit {
+  margin-top: 10px;
+}
+.checkout {
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.flex-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.data-room {
+  max-width: 39%;
+  margin-left: 70px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.671);
+}
+.yes {
+  margin-bottom: 10px;
+}
+.buttons {
+  margin: 2px;
+}
+.edit-bold {
+  font-weight: bold;
+}
+.container3 {
+  max-width: 800px;
+  width: 100%;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.671);
+  margin: 0 auto;
+  margin-top: 6%;
+}
+.register {
+  text-align: center;
+}
+.centered {
+  align-items: center;
+}
+
+.reservation-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-content {
+  display: flex;
+  align-items: center;
+}
+
+.reservation-img-container {
+  height: 150px;
+  margin-right: 20px;
+  flex: 0 0 150px;
+}
+
+.reservation-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.reservation-details {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.check-in,
+.check-out {
+  margin: 10px 0;
+}
+
+.reservation-buttons {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reservation-buttons button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-edit {
+  background-color: #595f09;
+  color: #fff;
+}
+
+.btn-delete {
+  background-color: #681106;
+  color: #fff;
+}
+
+.btn-review {
+  background-color: #065168;
+  color: #fff;
+}
+.cenr {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.container4 {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.671);
+  margin: 0 auto;
+  margin-top: 7%;
+}
+
