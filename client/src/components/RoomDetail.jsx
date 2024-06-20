@@ -7,7 +7,8 @@ const RoomDetail = ({
   checkIn,
   setCheckIn,
   checkOut,
-  setCheckOut
+  setCheckOut,
+  user
 }) => {
   const handleFormSubmit = (event) => {
     event.preventDefault()
@@ -23,28 +24,38 @@ const RoomDetail = ({
       <h5>Price: {room.price} BD</h5>
       <h5>Review: {room.review}</h5>
       <h5>Facilities: {room.facilities.join(', ')}</h5>
-
-      <form onSubmit={handleFormSubmit}>
-        <input
-          type="date"
-          value={checkIn}
-          onChange={(e) => {
-            console.log('Check-in date selected:', e.target.value)
-            setCheckIn(e.target.value)
-          }}
-          required
-        />
-        <input
-          type="date"
-          value={checkOut}
-          onChange={(e) => {
-            console.log('Check-out date selected:', e.target.value)
-            setCheckOut(e.target.value)
-          }}
-          required
-        />
-        <button type="submit">Confirm</button>
-      </form>
+      {user && 
+      <div className="container">
+        <div>reservation info:</div>
+        <form onSubmit={handleFormSubmit}>
+          <label htmlFor="checkIn">
+            Check In Date:
+            <input
+              type="date"
+              value={checkIn}
+              name="checkIn"
+              onChange={(e) => {
+                console.log('Check-in date selected:', e.target.value)
+                setCheckIn(e.target.value)
+              }}
+              required
+            />
+          </label>
+          <label htmlFor="checkOut">
+            Check In Date:
+            <input
+              type="date"
+              value={checkOut}
+              onChange={(e) => {
+                console.log('Check-out date selected:', e.target.value)
+                setCheckOut(e.target.value)
+              }}
+              required
+            />
+          </label>
+          <button type="submit">Confirm</button>
+        </form>
+      </div>}
     </div>
   )
 }
