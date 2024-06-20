@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-
+import { useNavigate } from 'react-router-dom'
 const ReviewForm = ({ user }) => {
+  let navigate = useNavigate()
   const { roomid } = useParams()
   const userid = user.id
   const [review, setReview] = useState({
@@ -27,6 +28,9 @@ const ReviewForm = ({ user }) => {
       )
       console.log(response.data)
       setReview({ review: '', rating: 0, user: user?.id, room: roomid })
+
+      alert('Thank you for your feedback ')
+      navigate(`/`)
     } catch (err) {
       console.error(err)
     }
