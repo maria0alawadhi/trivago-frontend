@@ -7,7 +7,7 @@ import Home from './pages/Home'
 import HotelRooms from './pages/HotelRooms'
 import Reservations from './pages/Reservations'
 import RoomDetails from './pages/RoomDetails'
-import DateForm from './pages/editfunction'
+import EditReservForm from './pages/EditReservForm'
 import ReviewForm from './pages/ReviewForm'
 import './App.css'
 
@@ -46,7 +46,7 @@ const App = () => {
           />
           <Route path="/signin" element={<SignIn setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/editfunction" element={<DateForm />} />
+          <Route path="/Edit" element={<EditReservForm />} />
           <Route path="/reservations" element={<Reservations user={user} />} />
           <Route path="/reviews/:roomid" element={<ReviewForm user={user} />} />
         </Routes>
