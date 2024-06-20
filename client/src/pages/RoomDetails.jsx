@@ -58,6 +58,7 @@ const RoomDetails = ({ user }) => {
           checkOut={checkOut}
           setCheckOut={setCheckOut}
           handleSubmit={handleSubmit}
+          user={user}
         />
       </div>
     </div>
