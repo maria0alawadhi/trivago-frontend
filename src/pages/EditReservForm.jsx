@@ -39,14 +39,6 @@ const EditReservForm = () => {
         'Error updating reservation:',
         error.response ? error.response.data : error.message
       )
-
-      if (error.response && error.response.status === 409) {
-        alert(
-          'Error updating reservation: There is a conflict with another reservation.'
-        )
-      } else {
-        alert('Error updating reservation')
-      }
     }
   }
 
