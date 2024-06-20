@@ -1,5 +1,4 @@
 import '../App.css'
-import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Client from '../services/api'
@@ -21,9 +20,7 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
   const handleDelete = async (reservationId) => {
     if (window.confirm('Are you sure you want to delete this reservation?')) {
       try {
-        await Client.delete(
-          `/reservations/${reservationId}`
-        )
+        await Client.delete(`/reservations/${reservationId}`)
         setUpdateRes((prevData) => !prevData)
       } catch (error) {
         console.error('Error deleting a reservation', error)
@@ -38,7 +35,7 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/rooms`)
+        const response = await Client.get(`/rooms`)
         setRooms(response.data)
       } catch (error) {
         console.log('Error Connecting', error)

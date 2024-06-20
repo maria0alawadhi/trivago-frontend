@@ -1,6 +1,7 @@
 import '../App.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { BASE_URL } from '../services/api'
 import { useParams } from 'react-router-dom'
 import RoomDetail from '../components/RoomDetail'
 import { useNavigate } from 'react-router-dom'
@@ -14,7 +15,7 @@ const RoomDetails = ({ user }) => {
     const getRoom = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/hotels/${hotelid}/rooms/${roomid}`
+          `${BASE_URL}/hotels/${hotelid}/rooms/${roomid}`
         )
         setRoom(response.data)
       } catch (error) {
@@ -32,7 +33,7 @@ const RoomDetails = ({ user }) => {
   const handleSubmit = async (e) => {
     try {
       const reserv = await axios.post(
-        `http://localhost:3001/hotels/${hotelid}/rooms/${roomid}`,
+        `${BASE_URL}/hotels/${hotelid}/rooms/${roomid}`,
         {
           room: roomid,
           checkIn,

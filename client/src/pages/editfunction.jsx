@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import axios from 'axios'
+import { BASE_URL } from '../services/api'
 
 const DateForm = () => {
   const navigate = useNavigate()
@@ -33,7 +34,7 @@ const DateForm = () => {
       console.log(`reservation id ${reservationId}`)
 
       const response = await axios.put(
-        `http://localhost:3001/reservations/${reservationId}`,
+        `${BASE_URL}/reservations/${reservationId}`,
         { oldCheckIn, oldCheckOut, newCheckIn, newCheckOut }
       )
 
