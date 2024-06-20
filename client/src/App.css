@@ -107,6 +107,17 @@ button:disabled {
   border-radius: 3px;
 }
 
+.img-room {
+  width: 50%;
+  height: 250px;
+}
+
+.img-room img {
+  width: 50%;
+  height: 50%;
+  border-radius: 3px;
+}
+
 .info-wrapper {
   padding: 16px;
 }
@@ -145,7 +156,6 @@ button:disabled {
   text-align: center;
 }
 .room-detail {
-  width: 900px;
   margin: 20px auto;
   padding: 20px;
   border: 1px solid #ddd;
@@ -155,7 +165,7 @@ button:disabled {
 }
 
 .room-detail img {
-  width: 100%;
+  width: 40%;
   border-radius: 8px;
   margin-bottom: 20px;
 }
@@ -238,7 +248,7 @@ button:disabled {
   box-shadow: 0 0 13px rgba(19, 19, 19, 0.1);
 }
 .room-data {
-  max-width: 100%;
+  max-width: 40%;
   padding: 1.5rem;
   background-color: #fff;
   border-radius: 10px;
@@ -246,14 +256,12 @@ button:disabled {
   margin: 0 auto;
 }
 .container2 {
-  max-width: 100%;
+  max-width: 40%;
 
-  padding: 1.5rem;
+  padding: 10px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.671);
-  margin: 0 auto;
-  margin-top: 30px;
 }
 .submit {
   margin-top: 10px;
@@ -263,4 +271,19 @@ button:disabled {
   margin-top: 20px;
   margin-bottom: 20px;
   font-weight: bold;
+}
+.flex-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.data-room {
+  max-width: 39%;
+  margin-left: 70px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.671);
 }
