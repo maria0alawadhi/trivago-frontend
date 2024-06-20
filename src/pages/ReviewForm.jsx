@@ -19,6 +19,7 @@ const ReviewForm = ({ user }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+
     try {
       const response = await Client.post(`/reviews/${roomid}`, review)
       console.log(response.data)
@@ -34,8 +35,10 @@ const ReviewForm = ({ user }) => {
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
-        <input type="hidden" name="room" value={review.room} disabled />
-        <input type="hidden" name="user" value={review.user} disabled />
+        <label htmlFor="room">RoomId "for reference only":</label>
+        <input type="text" name="room" value={review.room} disabled />
+        <label htmlFor="user">UserId "for reference only":</label>
+        <input type="text" name="user" value={review.user} disabled />
         <label htmlFor="review">Review:</label>
         <textarea name="review" value={review.review} onChange={handleChange} />
         <label htmlFor="rating">Rating:</label>
