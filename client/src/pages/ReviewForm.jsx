@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
+import Client from '../services/api'
 import { useNavigate } from 'react-router-dom'
 const ReviewForm = ({ user }) => {
   let navigate = useNavigate()
@@ -22,10 +21,7 @@ const ReviewForm = ({ user }) => {
     event.preventDefault()
 
     try {
-      const response = await axios.post(
-        `http://localhost:3001/reviews/${roomid}`,
-        review
-      )
+      const response = await Client.post(`/reviews/${roomid}`, review)
       console.log(response.data)
       setReview({ review: '', rating: 0, user: user?.id, room: roomid })
 

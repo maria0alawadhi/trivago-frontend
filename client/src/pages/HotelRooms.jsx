@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams, Link } from 'react-router-dom'
 import RoomCard from '../components/RoomCard'
+import { BASE_URL } from '../services/api'
 const HotelRooms = () => {
   const [rooms, setRooms] = useState([])
 
@@ -10,9 +11,7 @@ const HotelRooms = () => {
   useEffect(() => {
     const rooms = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:3001/hotels/${hotelid}/rooms`
-        )
+        const response = await axios.get(`${BASE_URL}/hotels/${hotelid}/rooms`)
         setRooms(response.data)
       } catch (error) {
         console.log('Error Connecting', error)

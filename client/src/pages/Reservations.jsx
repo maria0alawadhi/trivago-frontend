@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../App.css'
 import ReservationCard from '../components/ReservationCard'
-import axios from 'axios'
+import Client from '../services/api'
 
 const Reservations = ({ user }) => {
   const [Reservations, setReservations] = useState([])
@@ -9,7 +9,7 @@ const Reservations = ({ user }) => {
   useEffect(() => {
     const fetchReservations = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/reservations`)
+        const response = await Client.get(`/reservations`)
         setReservations(response.data)
       } catch (error) {
         console.error('Error Data Fetching:', error)
