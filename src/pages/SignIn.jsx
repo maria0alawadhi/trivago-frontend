@@ -22,8 +22,10 @@ const SignIn = ({ setUser }) => {
   }
 
   return (
+
     <div className="container3">
       <h1 className="register">Sign In</h1>
+    <div className="container wrapper">
       <div className="signin-card">
         <form onSubmit={handleSubmit}>
           <div className="input-wrapper">
@@ -53,6 +55,8 @@ const SignIn = ({ setUser }) => {
         </form>
       </div>
     </div>
+      </div>
+
   )
 }
 
