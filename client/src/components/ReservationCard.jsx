@@ -1,13 +1,14 @@
 import '../App.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { Navigate } from 'react-router'
 
 const ReservationCard = ({ reservations, setUpdateRes }) => {
   const [rooms, setRooms] = useState(null)
 
   const handleEdit = (reservation) => {
     const { checkIn, checkOut } = reservation
-    navigate(
+    Navigate(
       `/editfunction?checkIn=${encodeURIComponent(
         checkIn
       )}&checkOut=${encodeURIComponent(
