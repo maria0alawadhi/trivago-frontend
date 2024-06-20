@@ -2,7 +2,7 @@ import '../App.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import Client from '../services/api'
 const ReservationCard = ({ reservations, setUpdateRes }) => {
   let navigate = useNavigate()
   const [rooms, setRooms] = useState(null)
@@ -21,8 +21,8 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
   const handleDelete = async (reservationId) => {
     if (window.confirm('Are you sure you want to delete this reservation?')) {
       try {
-        await axios.delete(
-          `http://localhost:3001/reservations/${reservationId}`
+        await Client.delete(
+          `/reservations/${reservationId}`
         )
         setUpdateRes((prevData) => !prevData)
       } catch (error) {
