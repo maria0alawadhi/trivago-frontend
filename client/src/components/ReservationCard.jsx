@@ -1,14 +1,15 @@
 import '../App.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { Navigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 
 const ReservationCard = ({ reservations, setUpdateRes }) => {
+  let navigate = useNavigate()
   const [rooms, setRooms] = useState(null)
 
   const handleEdit = (reservation) => {
     const { checkIn, checkOut } = reservation
-    Navigate(
+    navigate(
       `/editfunction?checkIn=${encodeURIComponent(
         checkIn
       )}&checkOut=${encodeURIComponent(
@@ -68,6 +69,7 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
                     <b>Room Name:</b>{' '}
                     {rooms.find((room) => room._id === reservation.room).name}
                   </p>
+
                   <p>
                     <b>Price:</b>{' '}
                     {rooms.find((room) => room._id === reservation.room).price}{' '}
@@ -109,5 +111,4 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
     </div>
   )
 }
-
 export default ReservationCard
