@@ -30,7 +30,7 @@ const Reservations = ({ user }) => {
           setUpdateRes={setUpdateRes}
         />
       ) : (
-        <h3>No Reservations yet</h3>
+        <h3 className="unavailable">No Reservations yet</h3>
       )}
     </div>
   )

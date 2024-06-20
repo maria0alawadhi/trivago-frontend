@@ -4,6 +4,18 @@ import { useEffect, useState } from 'react'
 
 const ReservationCard = ({ reservations, setUpdateRes }) => {
   const [rooms, setRooms] = useState(null)
+
+  const handleEdit = (reservation) => {
+    const { checkIn, checkOut } = reservation
+    navigate(
+      `/editfunction?checkIn=${encodeURIComponent(
+        checkIn
+      )}&checkOut=${encodeURIComponent(
+        checkOut
+      )}&reservationId=${encodeURIComponent(reservation._id)}`
+    )
+  }
+
   const handleDelete = async (reservationId) => {
     if (window.confirm('Are you sure you want to delete this reservation?')) {
       try {
@@ -52,12 +64,12 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
                 </div>
                 <div className="col">
                   <p>
-                    <b>Room Name:</b>
+                    <b>Room Name:</b>{' '}
                     {rooms.find((room) => room._id === reservation.room).name}
                   </p>
                   <p>
-                    <b>Price:</b>
-                    {rooms.find((room) => room._id === reservation.room).price}
+                    <b>Price:</b>{' '}
+                    {rooms.find((room) => room._id === reservation.room).price}{' '}
                     BD
                   </p>
                   <p className="check-in">
@@ -72,7 +84,12 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
               <p>Room details not found.</p>
             ))}
           <div>
-            <button className="btn btn-edit">Edit</button>
+            <button
+              className="btn btn-edit"
+              onClick={() => handleEdit(reservation)}
+            >
+              Edit
+            </button>
             <button
               className="btn btn-delete"
               onClick={() => handleDelete(reservation._id)}

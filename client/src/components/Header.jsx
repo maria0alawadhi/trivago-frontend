@@ -6,12 +6,16 @@ const Header = ({ user, handleLogOut }) => {
   if (user) {
     userOptions = (
       <nav>
-        <h3>Welcome {user.email}!</h3>
-        <Link to="/">Home</Link>
-        <Link to="/reservations">Reservations</Link>
-        <Link onClick={handleLogOut} to="/">
-          Sign Out
-        </Link>
+        <div className="head">
+          <Link to="/">Home</Link>
+          <Link to="/reservations">Reservations</Link>
+          <Link onClick={handleLogOut} to="/">
+            Sign Out
+          </Link>
+        </div>
+        <div>
+          <h3 className="greeting">Welcome {user.email}!</h3>
+        </div>
       </nav>
     )
   }
@@ -24,11 +28,7 @@ const Header = ({ user, handleLogOut }) => {
     </nav>
   )
 
-  return (
-    <header>
-      {user ? userOptions : publicOptions}
-    </header>
-  )
+  return <header>{user ? userOptions : publicOptions}</header>
 }
 
 export default Header

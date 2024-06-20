@@ -14,8 +14,17 @@ body {
 nav {
   overflow: hidden;
   background-color: #333;
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  height: 80px;
+  align-items: center;
 }
-
+.greeting {
+  color: white;
+}
 nav a {
   float: left;
   display: block;
@@ -214,4 +223,17 @@ button:disabled {
 
 .col {
   width: 100%;
+}
+.unavailable {
+  width: 300px;
+  height: 100px;
+  align-items: center;
+  margin-left: 100px;
+  justify-content: center;
+  display: flex;
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 13px rgba(19, 19, 19, 0.1);
 }
