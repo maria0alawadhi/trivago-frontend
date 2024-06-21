@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import Client from '../services/api'
+import '../App.css'
+
 const EditReservForm = () => {
   const navigate = useNavigate()
   const location = useLocation()
@@ -12,6 +14,7 @@ const EditReservForm = () => {
   const [newCheckIn, setNewCheckIn] = useState('')
   const [newCheckOut, setNewCheckOut] = useState('')
   const [confirmEdit, setConfirmEdit] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
   const handleConfirm = () => {
     setConfirmEdit(true)
@@ -27,19 +30,22 @@ const EditReservForm = () => {
       })
 
       const response = await Client.put(`/reservations/${reservationId}`, {
-        oldCheckIn,
-        oldCheckOut,
-        newCheckIn,
-        newCheckOut
+        checkIn: newCheckIn,
+        checkOut: newCheckOut
       })
 
-      navigate('/')
+      setShowModal(true)
     } catch (error) {
       console.error(
         'Error updating reservation:',
         error.response ? error.response.data : error.message
       )
     }
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
+    navigate('/')
   }
 
   return (
@@ -86,6 +92,17 @@ const EditReservForm = () => {
           <button className="no" onClick={() => navigate(-1)}>
             No
           </button>
+        </>
+      )}
+
+      {showModal && (
+        <>
+          <div className="modal-overlay" onClick={closeModal}></div>
+          <div className="modal">
+            <h3>Success</h3>
+            <p>Reservation updated successfully!</p>
+            <button onClick={closeModal}>OK</button>
+          </div>
         </>
       )}
     </div>
