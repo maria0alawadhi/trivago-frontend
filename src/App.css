@@ -407,3 +407,15 @@ textarea[name='review'] {
   height:300px; 
   width: 450px; 
 }
+
+.footer{
+  background-color: #333;
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: white;
+  height: 40px;
+  align-items: center;
+}
+

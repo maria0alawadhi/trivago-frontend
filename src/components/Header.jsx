@@ -9,6 +9,7 @@ const Header = ({ user, handleLogOut }) => {
         <div className="head">
           <Link to="/">Home</Link>
           <Link to="/reservations">Reservations</Link>
+          <Link to="/AboutUs">About Us</Link>
           <Link onClick={handleLogOut} to="/">
             Sign Out
           </Link>
@@ -23,6 +24,7 @@ const Header = ({ user, handleLogOut }) => {
   const publicOptions = (
     <nav>
       <Link to="/">Home</Link>
+      <Link to="/AboutUs">About Us</Link>
       <Link to="/register">Register</Link>
       <Link to="/signin">Sign In</Link>
     </nav>

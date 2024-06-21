@@ -9,6 +9,8 @@ import Reservations from './pages/Reservations'
 import RoomDetails from './pages/RoomDetails'
 import EditReservForm from './pages/EditReservForm'
 import ReviewForm from './pages/ReviewForm'
+import Footer from './components/Footer'
+import AboutUs from './pages/AboutUs'
 import './App.css'
 
 import Header from './components/Header'
@@ -46,11 +48,13 @@ const App = () => {
           />
           <Route path="/signin" element={<SignIn setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/Edit" element={<EditReservForm />} />
           <Route path="/reservations" element={<Reservations user={user} />} />
           <Route path="/reviews/:roomid" element={<ReviewForm user={user} />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   )
 }
