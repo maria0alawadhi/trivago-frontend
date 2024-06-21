@@ -5,12 +5,10 @@ body {
   align-items: center;
   background-color: #ffffff;
 }
-
 .wrapper {
   display: flex;
   justify-content: center;
 }
-
 nav {
   overflow: hidden;
   background-color: #333;
@@ -34,7 +32,6 @@ nav a {
   font-size: 1.2rem;
   margin-left: 18px;
 }
-
 .container {
   max-width: 480px;
   width: 100%;
@@ -45,14 +42,12 @@ nav a {
   margin: 0 auto;
   margin-top: 10%;
 }
-
 .input-wrapper {
   margin-bottom: 1rem;
   color: #080808;
   display: block;
   font-weight: bold;
 }
-
 .input-wrapper input {
   width: 100%;
   padding: 0.5rem;
@@ -60,7 +55,6 @@ nav a {
   border-radius: 4px;
   font-size: 16px;
 }
-
 button {
   display: block;
   width: 100%;
@@ -72,7 +66,6 @@ button {
   font-size: 16px;
   cursor: pointer;
 }
-
 button:disabled {
   background-color: #747272;
   height: 50px;
@@ -84,7 +77,6 @@ button:disabled {
   padding: 20px;
   text-align: center;
 }
-
 .hotel-card {
   border: 1px solid #ccc;
   padding: 16px;
@@ -102,32 +94,26 @@ button:disabled {
   width: 100%;
   height: 250px;
 }
-
 .img-wrapper img {
   width: 100%;
   height: 100%;
   border-radius: 3px;
 }
-
 .img-room {
   width: 50%;
   height: 250px;
 }
-
 .img-room img {
   width: 50%;
   height: 50%;
   border-radius: 3px;
 }
-
 .info-wrapper {
   padding: 16px;
 }
-
 .info-wrapper h3 {
   margin: 5px;
 }
-
 .info-wrapper p {
   margin: 0;
   font-size: 13px;
@@ -166,31 +152,26 @@ button:disabled {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
-
 .room-detail img {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 20px;
 }
-
 .room-detail h3 {
   margin: 10px 0;
   font-size: 25px;
   color: #000000;
 }
-
 .room-detail h4 {
   margin: 8px 0;
   font-size: 20px;
   color: #000000;
 }
-
 .room-detail h5 {
   margin: 6px 0;
   font-size: 20px;
   color: 000000;
 }
-
 .reservation-card {
   border: 1px solid #ccc;
   padding: 16px;
@@ -201,40 +182,31 @@ button:disabled {
   margin: 2% auto;
   display: flex;
 }
-
 .btn {
   margin: 3%;
 }
-
 .btn-review {
   background-color: #065168;
 }
-
 .btn-delete {
   background-color: #681106;
 }
-
 .btn-edit {
   background-color: #595f09;
 }
-
 .check-in {
   color: #065520;
 }
-
 .check-out {
   color: #8f0a0a;
 }
-
 .reservation-img {
   width: 90%;
   height: 90%;
 }
-
 .row {
   display: inline-flex;
 }
-
 .col {
   width: 100%;
   text-align: center;
@@ -252,7 +224,6 @@ button:disabled {
   background-color: #fff;
   box-shadow: 0 0 13px rgba(19, 19, 19, 0.1);
 }
-
 .room-data {
   max-width: 50%;
   padding: 1.5rem;
@@ -318,7 +289,6 @@ button:disabled {
 .centered {
   align-items: center;
 }
-
 .reservation-card {
   display: flex;
   flex-direction: column;
@@ -329,42 +299,35 @@ button:disabled {
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .reservation-content {
   display: flex;
   align-items: center;
 }
-
 .reservation-img-container {
   height: 150px;
   margin-right: 20px;
   flex: 0 0 150px;
 }
-
 .reservation-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
 }
-
 .reservation-details {
   flex: 1;
   padding: 0 20px;
 }
-
 .check-in,
 .check-out {
   margin: 10px 0;
 }
-
 .reservation-buttons {
   width: 150px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
 .reservation-buttons button {
   padding: 10px 15px;
   border: none;
@@ -372,17 +335,14 @@ button:disabled {
   cursor: pointer;
   font-size: 16px;
 }
-
 .btn-edit {
   background-color: #595f09;
   color: #fff;
 }
-
 .btn-delete {
   background-color: #681106;
   color: #fff;
 }
-
 .btn-review {
   background-color: #065168;
   color: #fff;
@@ -402,4 +362,18 @@ button:disabled {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.671);
   margin: 0 auto;
   margin-top: 7%;
+}
+.review-card {
+  background-color: #096d2725;
+  border-radius: 8px;
+  padding: 1%;
+  margin: 1%;
+}
+.review-title {
+  font-weight: bolder;
+}
+.error {
+  color: #7a151f;
+  font-weight: bold;
+  margin-bottom: 12px;
 }
