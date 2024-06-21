@@ -1,4 +1,6 @@
-# reservation Hotel App
+# Trivago 
+
+## Reservation Hotel App
 
 ## Date: 11/6/2024
 
@@ -16,7 +18,7 @@
 
 ### **_Description_**
 
-#### The hotel rooms reservation system will allow hotel administrators to manage their room inventory, with the ability to add, view, update, and delete rooms for each of their hotels. Users will be able to sign in to the system and browse the available rooms across all hotels, selecting and reservation the ones they wish to stay in. The system will maintain up-to-date room availability information, updating the database as reservations are made. The admin interface will provide a centralized platform for managing the hotel's room offerings, while the user-facing front-end will offer a seamless reservation experience, ensuring efficient hotel room management and reservation capabilities.
+#### The hotel reservation system will allow Users to sign in to the system and browse the available rooms across all hotels, select the hotel, and reserve the room they wish to stay in, and add a review or delete or edit their reservations. The system will maintain up-to-date room availability information, updating the database as reservations are made. The user will offer a seamless reservation experience, ensuring efficient hotel room management and reservation capabilities.
 
 ---
 
@@ -32,15 +34,15 @@
 
 ### **_Getting Started_**
 
-##### User can sign up and sign in,then begin viewing the different hotels with their rooms and booked one if the user is login otherwise he/she can view only.
+##### Users can sign up and sign in, then begin viewing the different hotels with their rooms and book one if the user is logged in  otherwise, can view only.
 
-##### Admin can sign in to manage the rooms in each hotel by adding/editting/deleting and viewing them.
+##### Users can book and create reservation rooms, delete the reservation, edit the reservation date, and add multiple reviews on each room.
 
 ##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/EUQNvHfp/hotel-project).
 
 ---
 
-### **_Wireframe_**
+### **_Screenshots_**
 
 ##### Home
 
