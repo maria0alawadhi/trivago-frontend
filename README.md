@@ -45,35 +45,36 @@
 ### **_Screenshots_**
 
 ##### Home
+![home](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/ecb75da3-e509-4f0c-bb5e-38bab3b8dbc9)
 
-![Home](https://github.com/maria0alawadhi/Hotel-Project/assets/129513991/c8645078-761a-4545-9c29-8374e51a5986)
 
 ##### Hotel rooms
-
-![HotelRooms](https://github.com/maria0alawadhi/Hotel-Project/assets/129513991/86b2b5c6-c636-48f5-a91c-ecb03f69eb65)
+![HotelRooms](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/aaccea8f-7b43-4440-9f22-739234c013ce)
 
 ##### Room Details
+![RoomDetails](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/73c8c485-7e5c-4952-bd82-d75253e80b58)
 
-![RoomDetails](https://github.com/maria0alawadhi/Hotel-Project/assets/129513991/46f16237-6ad3-4dc3-b9fc-d52e5d7e9c9e)
 
-##### Add Room Form
+##### Reservation Rooms
+![ReservationRoom](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/3017f60c-2281-47b0-9d67-6f6a49cd2c80)
 
-![RoomForm](https://github.com/maria0alawadhi/Hotel-Project/assets/129513991/82cf5f92-9cf3-4319-ba44-dc34994e0d11)
 
-##### Edit Room Form
 
-![EditRoomForm](https://github.com/maria0alawadhi/Hotel-Project/assets/129513991/d1dd2762-68a5-4c92-93fe-ed256b1c0925)
+##### Edit Reservation Room 
+![edit](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/0b1f6186-1177-4bfa-ac71-3fb4b95918d3)
 
-##### Book Room
 
-![BookRoom](https://github.com/maria0alawadhi/Hotel-Project/assets/129513991/617b496b-5de6-4e7f-b21a-c505a87f9f73)
+##### Review Reservation Room
+![review](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/ef417545-f3d6-417e-9571-f686f9770e1c)
+
+
 
 ---
 
 ### **_Future Updates_**
 
-- [ ] To apply the full CRUD (Create, Read, Update, Delete) functionality to the Hotel data source.
-- [ ] To add hotel locations.
+- [ ] To apply the full CRUD on Admin type (Create, Read, Update, Delete) functionality to the Hotel data source.
+- [ ] To add hotel locations map.
 
 ---
 
