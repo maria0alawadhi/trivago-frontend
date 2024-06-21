@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const AboutUs = () => {
   return (
     <div className="about-us">
@@ -30,9 +31,9 @@ const AboutUs = () => {
         every member of the Trivago family played a crucial role. We're proud of
         what we've built, and we're excited for you to experience it.
       </p>
-      <div>
+      <div className="team-section">
         <h2>Our Beautiful Team</h2>
-        <img src="" alt="trivago-team"/>
+        <img src="" alt="trivago-team" />
       </div>
     </div>
   )
