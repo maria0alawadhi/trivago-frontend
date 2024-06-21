@@ -3,7 +3,6 @@ import '../App.css'
 import axios from 'axios'
 import { useParams } from 'react-router'
 import { BASE_URL } from '../services/api'
-
 const RoomDetail = ({
   room,
   handleSubmit,
@@ -15,14 +14,12 @@ const RoomDetail = ({
 }) => {
   const [Room, setRoom] = useState([])
   const { roomid } = useParams()
-  
   const handleFormSubmit = (event) => {
     event.preventDefault()
     console.log('Form submitted with dates:', checkIn, checkOut)
     handleSubmit({ checkIn, checkOut })
   }
-  
-    useEffect(() => {
+  useEffect(() => {
     const reviewRoom = async () => {
       try {
         const response = await axios.get(`${BASE_URL}/reviews/${roomid}`)
@@ -33,7 +30,6 @@ const RoomDetail = ({
     }
     reviewRoom()
   }, [roomid])
-
   return (
     <div className="room-detail" id={room.id}>
       <h2 className="room-text">Room Details</h2>
@@ -43,15 +39,6 @@ const RoomDetail = ({
         <h4>Type: {room.type}</h4>
         <h4>Price: {room.price} BD</h4>
         <h4>Facilities: {room.facilities.join(', ')}</h4>
-        <h5>Reviews: </h5>
-      <ul>
-        {Room.map((room, index) => (
-          <div key={index}>
-            {room.review}
-       
-            </div>
-        ))}
-      </ul>
       </div>
       {user && (
         <div className="container2">
@@ -86,15 +73,22 @@ const RoomDetail = ({
                 required
               />
             </label>
-
             <button type="submit" className="submit">
               Confirm
             </button>
           </form>
         </div>
       )}
+      <div className="container2">
+        <h5>Reviews: </h5>
+        {Room.map((room, index) => (
+          <div key={index} className="review-card">
+            <p className="review-title"> {room.user.email}</p>
+            <p> {room.review}</p>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
-
 export default RoomDetail
