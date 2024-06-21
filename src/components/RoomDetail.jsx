@@ -83,7 +83,7 @@ const RoomDetail = ({
         <h5>Reviews: </h5>
         {Room.map((room, index) => (
           <div key={index} className="review-card">
-            <p className="review-title"> {room.user.email}</p>
+            <p className="review-title"> {room.user.name}</p>
             <p> {room.review}</p>
           </div>
         ))}

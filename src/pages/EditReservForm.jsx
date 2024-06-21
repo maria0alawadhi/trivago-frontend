@@ -22,14 +22,7 @@ const EditReservForm = () => {
 
   const handleUpdate = async () => {
     try {
-      console.log('Sending data:', {
-        oldCheckIn,
-        oldCheckOut,
-        newCheckIn,
-        newCheckOut
-      })
-
-      const response = await Client.put(`/reservations/${reservationId}`, {
+      await Client.put(`/reservations/${reservationId}`, {
         checkIn: newCheckIn,
         checkOut: newCheckOut
       })
@@ -45,7 +38,7 @@ const EditReservForm = () => {
 
   const closeModal = () => {
     setShowModal(false)
-    navigate('/')
+    navigate('/reservations')
   }
 
   return (

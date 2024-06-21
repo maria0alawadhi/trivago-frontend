@@ -5,6 +5,12 @@ import Client from '../services/api'
 const ReservationCard = ({ reservations, setUpdateRes }) => {
   let navigate = useNavigate()
   const [rooms, setRooms] = useState(null)
+  const [showModal, setShowModal] = useState(false)
+
+  const closeModal = () => {
+    setShowModal(false)
+    navigate('/reservations')
+  }
 
   const handleEdit = (reservation) => {
     const { checkIn, checkOut } = reservation
@@ -18,14 +24,13 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
   }
 
   const handleDelete = async (reservationId) => {
-      try {
-        await Client.delete(`/reservations/${reservationId}`)
-        setUpdateRes((prevData) => !prevData)
-        navigate("/reservations")
-      } catch (error) {
-        console.error('Error deleting a reservation', error)
-      }
-    
+    try {
+      await Client.delete(`/reservations/${reservationId}`)
+      setUpdateRes((prevData) => !prevData)
+      setShowModal(true)
+    } catch (error) {
+      console.error('Error deleting a reservation', error)
+    }
   }
 
   const handleReviewClick = (roomId) => {
@@ -105,6 +110,17 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
             ))}
         </div>
       ))}
+
+      {showModal && (
+        <>
+          <div className="modal-overlay" onClick={closeModal}></div>
+          <div className="modal">
+            <h3>Success</h3>
+            <p>Reservation deleted successfully!</p>
+            <button onClick={closeModal}>OK</button>
+          </div>
+        </>
+      )}
     </div>
   )
 }
