@@ -22,10 +22,8 @@ const ReviewForm = ({ user }) => {
   const handleChange = (event) => {
     setReview({ ...review, [event.target.name]: event.target.value })
   }
-
   const handleSubmit = async (event) => {
     event.preventDefault()
-
     try {
       await Client.post(`/reviews/${roomid}`, review)
       setReview({ review: '', rating: 0, user: user?.id, room: roomid })
@@ -34,7 +32,6 @@ const ReviewForm = ({ user }) => {
       console.error(err)
     }
   }
-
   return (
     <div className="container4">
       <form onSubmit={handleSubmit}>

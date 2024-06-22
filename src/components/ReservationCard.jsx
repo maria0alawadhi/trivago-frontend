@@ -22,7 +22,6 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
       )}&reservationId=${encodeURIComponent(reservation._id)}`
     )
   }
-
   const handleDelete = async (reservationId) => {
     try {
       await Client.delete(`/reservations/${reservationId}`)
@@ -32,11 +31,9 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
       console.error('Error deleting a reservation', error)
     }
   }
-
   const handleReviewClick = (roomId) => {
     navigate(`/reviews/${roomId}`)
   }
-
   useEffect(() => {
     const fetchRooms = async () => {
       try {
@@ -46,10 +43,8 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
         console.log('Error Connecting', error)
       }
     }
-
     fetchRooms()
   }, [])
-
   return (
     <div className="cenr">
       <h1>My Reservations</h1>
