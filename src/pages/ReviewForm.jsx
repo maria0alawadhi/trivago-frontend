@@ -19,7 +19,6 @@ const ReviewForm = ({ user }) => {
     navigate('/')
   }
 
-
   const handleChange = (event) => {
     setReview({ ...review, [event.target.name]: event.target.value })
   }
@@ -28,8 +27,7 @@ const ReviewForm = ({ user }) => {
     event.preventDefault()
 
     try {
-      const response = await Client.post(`/reviews/${roomid}`, review)
-      console.log(response.data)
+      await Client.post(`/reviews/${roomid}`, review)
       setReview({ review: '', rating: 0, user: user?.id, room: roomid })
       setShowModal(true)
     } catch (err) {

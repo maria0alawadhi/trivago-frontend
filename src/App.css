@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
 body {
   margin: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -401,4 +403,55 @@ button:disabled {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
+}
+
+textarea[name='review'] {
+  height: 300px;
+  width: 450px;
+}
+
+.about-us {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  font-family: 'Lora', serif;
+  color: #333;
+}
+
+.about-us h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-us p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-us .team-section {
+  margin-top: 40px;
+}
+
+.about-us .team-section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-us .team-section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1rem;
 }
