@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 const ReviewForm = ({ user }) => {
   let navigate = useNavigate()
   const { roomid } = useParams()
+  const [showModal, setShowModal] = useState(false)
   const userid = user.id
   const [review, setReview] = useState({
     review: '',
@@ -12,25 +13,23 @@ const ReviewForm = ({ user }) => {
     user: userid,
     room: roomid
   })
-
+  const closeModal = () => {
+    setShowModal(false)
+    navigate('/')
+  }
   const handleChange = (event) => {
     setReview({ ...review, [event.target.name]: event.target.value })
   }
-
   const handleSubmit = async (event) => {
     event.preventDefault()
-
     try {
-      const response = await Client.post(`/reviews/${roomid}`, review)
-      console.log(response.data)
+      await Client.post(`/reviews/${roomid}`, review)
       setReview({ review: '', rating: 0, user: user?.id, room: roomid })
-
-      navigate(`/`)
+      setShowModal(true)
     } catch (err) {
       console.error(err)
     }
   }
-
   return (
     <div className="container4">
       <form onSubmit={handleSubmit}>
@@ -40,11 +39,19 @@ const ReviewForm = ({ user }) => {
           <h1>Review</h1>
         </label>
         <textarea name="review" value={review.review} onChange={handleChange} />
-
         <button type="submit">Submit Review</button>
       </form>
+      {showModal && (
+        <>
+          <div className="modal-overlay" onClick={closeModal}></div>
+          <div className="modal">
+            <h3>Success</h3>
+            <p>Reservation Reviewed successfully!</p>
+            <button onClick={closeModal}>OK</button>
+          </div>
+        </>
+      )}
     </div>
   )
 }
-
 export default ReviewForm
