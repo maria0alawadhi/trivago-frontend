@@ -1,4 +1,5 @@
 import React from 'react'
+import teamImg from '../img/GATeam.jpeg'
 
 
 const AboutUs = () => {
@@ -33,7 +34,7 @@ const AboutUs = () => {
       </p>
       <div className="team-section">
         <h2>Our Beautiful Team</h2>
-        <img src="" alt="trivago-team" />
+        <img src={teamImg} alt="trivago-team" />
       </div>
     </div>
   )
