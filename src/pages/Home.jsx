@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const fetchHotels = async () => {
       try {
-        const response = await axios.get(`${BASE_URL} /hotels`)
+        const response = await axios.get(`${BASE_URL}/hotels`)
         setHotels(response.data)
       } catch (error) {
         console.log('Error Connecting', error)
