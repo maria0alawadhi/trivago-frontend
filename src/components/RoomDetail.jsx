@@ -16,7 +16,6 @@ const RoomDetail = ({
   const { roomid } = useParams()
   const handleFormSubmit = (event) => {
     event.preventDefault()
-    console.log('Form submitted with dates:', checkIn, checkOut)
     handleSubmit({ checkIn, checkOut })
   }
   useEffect(() => {
@@ -54,7 +53,6 @@ const RoomDetail = ({
                 value={checkIn}
                 name="checkIn"
                 onChange={(e) => {
-                  console.log('Check-in date selected:', e.target.value)
                   setCheckIn(e.target.value)
                 }}
                 required
@@ -67,7 +65,6 @@ const RoomDetail = ({
                 type="date"
                 value={checkOut}
                 onChange={(e) => {
-                  console.log('Check-out date selected:', e.target.value)
                   setCheckOut(e.target.value)
                 }}
                 required
@@ -83,7 +80,7 @@ const RoomDetail = ({
         <h5>Reviews: </h5>
         {Room.map((room, index) => (
           <div key={index} className="review-card">
-            <p className="review-title"> {room.user.email}</p>
+            <p className="review-title"> {room.user.name}</p>
             <p> {room.review}</p>
           </div>
         ))}

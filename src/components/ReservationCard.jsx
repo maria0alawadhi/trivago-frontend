@@ -6,10 +6,12 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
   let navigate = useNavigate()
   const [rooms, setRooms] = useState(null)
   const [showModal, setShowModal] = useState(false)
+
   const closeModal = () => {
     setShowModal(false)
     navigate('/reservations')
   }
+
   const handleEdit = (reservation) => {
     const { checkIn, checkOut } = reservation
     navigate(
@@ -103,6 +105,7 @@ const ReservationCard = ({ reservations, setUpdateRes }) => {
             ))}
         </div>
       ))}
+
       {showModal && (
         <>
           <div className="modal-overlay" onClick={closeModal}></div>

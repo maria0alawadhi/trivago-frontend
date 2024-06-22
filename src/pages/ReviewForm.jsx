@@ -13,10 +13,12 @@ const ReviewForm = ({ user }) => {
     user: userid,
     room: roomid
   })
+
   const closeModal = () => {
     setShowModal(false)
     navigate('/')
   }
+
   const handleChange = (event) => {
     setReview({ ...review, [event.target.name]: event.target.value })
   }
@@ -54,4 +56,5 @@ const ReviewForm = ({ user }) => {
     </div>
   )
 }
+
 export default ReviewForm

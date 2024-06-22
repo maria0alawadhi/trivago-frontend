@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { CheckSession } from './services/Auth'
+import './App.css'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import Home from './pages/Home'
@@ -9,8 +10,7 @@ import Reservations from './pages/Reservations'
 import RoomDetails from './pages/RoomDetails'
 import EditReservForm from './pages/EditReservForm'
 import ReviewForm from './pages/ReviewForm'
-import './App.css'
-
+import AboutUs from './pages/AboutUs'
 import Header from './components/Header'
 
 const App = () => {
@@ -46,6 +46,7 @@ const App = () => {
           />
           <Route path="/signin" element={<SignIn setUser={setUser} />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/Edit" element={<EditReservForm />} />
           <Route path="/reservations" element={<Reservations user={user} />} />
           <Route path="/reviews/:roomid" element={<ReviewForm user={user} />} />
