@@ -41,7 +41,14 @@
 ##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/EUQNvHfp/hotel-project).
 
 ---
+### **_Diagrams_**
 
+### Component Hierarchy Diagram
+
+![Hirarchy](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/b3a7f3d1-be25-40f4-b237-e6e1c3293f84)
+
+### ERD 
+---
 ### **_Screenshots_**
 
 ##### Home
@@ -81,7 +88,5 @@
 ### **_Credits_**
 
 ##### Markdown Cheatsheet: [GitHub](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
-
-##### Wireframe tool :[Canva](https://www.canva.com/design/DAGHv_MDYms/fFag0wkMM5e852P4dCjePg/edit?utm_content=DAGHv_MDYms&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-
+#####  Tailwind CSS Alerts:[Flowbite](https://flowbite.com/docs/components/alerts/)
 ---
