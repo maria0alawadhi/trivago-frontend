@@ -45,7 +45,8 @@
 
 ### Component Hierarchy Diagram
 
-![Hirarchy](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/b3a7f3d1-be25-40f4-b237-e6e1c3293f84)
+![Hierarchy Diagram drawio (2)](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/4e2eaf79-8cf6-401c-bbd0-52a534a3656f)
+
 
 ### ERD 
 ![erd-trivago](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/f9092558-80cc-4e8b-b284-e24b2c88d322)
