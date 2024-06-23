@@ -16,14 +16,14 @@ import Header from './components/Header'
 const App = () => {
   const [user, setUser] = useState(null)
 
-  const handleLogOut = () => {
-    setUser(null)
-    localStorage.clear()
-  }
-
   const checkToken = async () => {
     const user = await CheckSession()
     setUser(user)
+  }
+
+  const handleLogOut = () => {
+    setUser(null)
+    localStorage.clear()
   }
 
   useEffect(() => {
